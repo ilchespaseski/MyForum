@@ -1,0 +1,348 @@
+
+
+.reg-header{
+    padding-bottom: 30px;
+}
+
+.login-header {
+    padding-bottom: 30px;
+}
+
+.hav-acc {
+    float:right;
+    color:dimgrey;
+}
+.hav-acc:hover {
+    color:grey;
+}
+
+.fill-alert {
+    float:right;
+    color:red;
+    font-size: 15px;
+    display: none;
+}
+.usrpwwrong {
+    color:red;
+    display: none;
+}
+.MatchAlert {
+    color:red;
+    display:none;
+}
+.registration-btn {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.sign-log {
+    margin: 5px;
+}
+.sign-log {
+     margin: 5px;
+ }
+.pagination {
+    background-color: grey !important;
+}
+.topic-section {
+    margin-top: 10px;
+    background-color: #ffffff80;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 5px;
+}
+.home-header {
+  background-color: #ffffff80;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.tpcbtn{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.topic-info {
+    border-bottom: 1px solid black;
+}
+
+.page-item.active .page-link {
+    background-color: #bb2d3b !important;
+
+    border-color: #bb2d3b !important;
+}
+.card-topic {
+
+}
+/*.topic-info {*/
+/*    display: flex;*/
+/*    justify-content: right;*/
+/*}*/
+/*.cat-info {*/
+/*    display: flex;*/
+/*    justify-content: left;*/
+/*}*/
+.card-topic {
+    background-color: #ffffff80 !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+.login {
+    margin-top: 100px;
+    border-radius: 10%;
+    width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 50px;
+    padding-bottom: 100px;
+    font-family:Comic Sans MS, Comic Sans, cursive;
+
+
+}
+
+.img {
+
+}
+.logo {
+    font-family: Brush Script MT, cursive;
+    font-size: 2em !important;
+    color: black;
+}
+.logo-nav {
+    font-family: Brush Script MT, cursive;
+    font-size: 2em !important;
+    color: white !important;
+}
+.form-control{
+    border: 0 !important;
+    outline: none !important;
+    background: transparent !important;
+    border-bottom: 1px solid black !important;
+    border-radius: 0 !important;
+}
+#submit {
+    width: 100%;
+    background-color: #fdc886;
+    font-family:Comic Sans MS, Comic Sans, cursive;
+    font-weight: 600;
+    color: black;
+    border: 0 !important;
+    max-height: 100%;
+}
+.test {
+    float: right;
+}
+.login {
+    background-color: whitesmoke;
+}
+
+.material-symbols-outlined {
+    display: inline-flex;
+    vertical-align: top;}
+.nav-group-btn{
+}
+
+.nav-link{
+    color: white !important;
+}
+/*.category-container {*/
+/*    border: 0.5px solid lightgrey;*/
+/*    border-left: 10px solid purple;*/
+/*}*/
+.last-topic-ct {
+    width:100% !important
+}
+.category-dsc-last-post{
+    display: flex;
+    justify-content: space-between;
+}
+.category-name {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: black;
+}
+.cat-link:hover, .cat-link:visited, .cat-link:link, .cat-link:active
+{
+    text-decoration: none;
+}
+.category-description {
+    color: #A9A9A9;
+    text-decoration: none !important;
+}
+.topics-num-cat-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top:50px;
+    color: grey;
+    font-size: 15px;
+    margin-left: 40px;
+}
+.topic-num {
+    padding-top: 5px;
+    font-weight: bold;
+    color: #C0C0C0;
+    font-size: 1.5rem;
+}
+ul, li {
+    list-style:none;
+
+}
+
+li {
+    cursor: pointer;
+}
+
+#createnewtopic {
+    width: 140px;
+    height: 45px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fdc886;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+
+}
+#createnewtopic {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#createnewtopic:hover {
+    background-color: orange;
+    box-shadow: 0px 5px 10px orange;
+    color: black;
+    transform: translateY(-7px);
+}
+#createnewtopic:hover {
+    background-color: orange;
+    box-shadow: 0px 5px 10px orange;
+    color: black;
+    transform: translateY(-7px);
+}
+/*#topic-add-cat-info {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*}*/
+#replies-add-cat-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.first-replay {
+    margin-top: 20px ;
+    margin-bottom: 10px ;
+
+}
+
+.first-replay-textarea {
+    padding-bottom: 100px;
+}
+.first-replay-textarea-label {
+    padding-bottom: 10px;
+}
+#topic-name {
+        border-bottom: 2px solid green !important;
+        border-radius: 5px !important;
+}
+.first-replay-textarea {
+    border: 0.2px solid green;
+}
+.replay-area {
+    width: 100%;
+}
+
+.topic-container {
+    /*border: 1px solid grey;*/
+    border-radius: 5px;
+    /*margin: auto;*/
+    background-color: whitesmoke;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-top: 8px;
+
+}
+.delete_topic {
+    background: whitesmoke;
+    max-width: 100px !important;
+}
+.user-circle {
+    background: #FF7A59;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    display: flex;
+    padding-top:10px;
+    align-items: center;
+    justify-content: center;
+
+}
+.topic_subject {
+    display: flex;
+    align-items: center;
+
+    padding-top: 10px;
+    margin-left: 30px;
+}
+.delete_topic {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+@media screen and (min-width: 600px) {
+
+    .login {
+        width: 40%;
+    }
+    .login {
+        padding-top: 150px;
+    }
+}
+@media screen and (max-width: 900px) {
+
+    .login {
+        width: 100% !important;
+    }
+    .login {
+        padding-top: 150px;
+    }
+    .user-circle {
+        margin-top: 10px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .logout-text-btn, .login-text-btn, .register-text-btn {
+        display: none;
+    }
+
+}

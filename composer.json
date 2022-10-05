@@ -1,0 +1,13 @@
+{
+    "name": "ilche/myforum",
+    "description": "myforum",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {
+        "symfony/routing": "^6.1",
+        "symfony/http-foundation": "^6.1"
+    }
+}
