@@ -3,10 +3,10 @@
 
 	function AutoLoader($class)
     {
-        $path = sprintf($_SERVER["DOCUMENT_ROOT"] . '/MyForum/app/Controllers/%s.php', $class);
+        $path = sprintf($_SERVER["DOCUMENT_ROOT"] . '/app/Controllers/%s.php', $class);
         if (!file_exists($path)) {
             //return false;
-            $path = sprintf($_SERVER["DOCUMENT_ROOT"] . '/MyForum/%s.php', $class);
+            $path = sprintf($_SERVER["DOCUMENT_ROOT"] . '/%s.php', $class);
             if (!file_exists($path)) {
                 echo 'nema';
 
