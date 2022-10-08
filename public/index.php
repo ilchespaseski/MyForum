@@ -9,7 +9,7 @@ use App\Models\replies;
 use App\Controllers\TopicsController;
 use App\Controllers\RepliesController;
 
-include $_SERVER["DOCUMENT_ROOT"] . '/config/autoload.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/MyForum/config/autoload.php';
 include 'Routertest.php';
 //$router = new Router();
 
