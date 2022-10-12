@@ -3,6 +3,7 @@ $(document).ready(function () {
     url = window.location.href;
     var splitUrl = url.split('/');
     topic = splitUrl[splitUrl.length-1];
+    topic = atob(topic);
 
 
 

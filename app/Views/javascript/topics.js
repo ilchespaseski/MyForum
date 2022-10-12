@@ -88,7 +88,7 @@ $(document).ready(function (){
                 '                </div>\n' +
                 '\n' +
                 '                <div class="topic_subject col-8 col-lg-10 ">\n' +
-                '                    <a href="/myforum/replies/'+displayRecords[i].topic_subject.toLowerCase()+'">'+displayRecords[i].topic_subject+'</a>\n' +
+                '                    <a href="/myforum/replies/'+btoa(displayRecords[i].topic_subject)+'">'+displayRecords[i].topic_subject+'</a>\n' +
                 '                </div>\n')
             if(displayRecords[i].is_user){
                 encryptedID = btoa(displayRecords[i].topic_id);

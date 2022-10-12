@@ -26,6 +26,7 @@ class RepliesController extends \QueryBuilder
     }
 
     public function getReplies($topic){
+
         $sql = "SELECT topic_id FROM topics WHERE topic_subject = '$topic'";
         $id = $this->find($sql);
         $id = $id->fetch();
