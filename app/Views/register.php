@@ -10,7 +10,9 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
+<style>
+    <?php include 'styles.css' ?>
+</style>
 <body style="background-color: whitesmoke !important">
 <div class="container">
     <div class="img"></div>
@@ -43,7 +45,7 @@
 
 </form>
 </div>
-<script src="app\Views\javascript\register.js" type="text/javascript"></script>
+<script src="\app\Views\javascript\register.js" type="text/javascript"></script>
 </body>
 
 </html>

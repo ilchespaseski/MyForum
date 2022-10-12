@@ -1,5 +1,6 @@
 <?php
-include_once 'C:\xampp\htdocs\MyForum\app\Database\Database.php';
+include $_SERVER["DOCUMENT_ROOT"] . '/app/Database/Database.php';
+
 
 class QueryBuilder extends Database
 {

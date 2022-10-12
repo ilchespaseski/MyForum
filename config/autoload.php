@@ -3,19 +3,15 @@
 
 	function AutoLoader($class)
     {
-        $path = sprintf($_SERVER["DOCUMENT_ROOT"] . '/MyForum/app/Controllers/%s.php', $class);
+        $path = sprintf($_SERVER["DOCUMENT_ROOT"] . '/app/Controllers/%s.php', $class);
         if (!file_exists($path)) {
             //return false;
-            $path = sprintf($_SERVER["DOCUMENT_ROOT"] . '/MyForum/%s.php', $class);
+            $path = sprintf($_SERVER["DOCUMENT_ROOT"] . '/public/%s.php', $class);
             if (!file_exists($path)) {
-                echo 'nema';
-
+            $path = sprintf($_SERVER["DOCUMENT_ROOT"]. '/app/Models/%s.php',$class);
             }
-
-        } else if(!file_exists($path)){
-            $path = sprintf($_SERVER["DOCUMENT_ROOT"]. '/MyForum/app/Models/%s.php',$class);
-            if(!file_exists($path)){
-                echo 'nema';
+            else {
+                return 'njama';
             }
         }
         include_once $path;

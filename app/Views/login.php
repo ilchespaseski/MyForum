@@ -1,5 +1,4 @@
 <?php
-session_start();
 //if(isset($_SESSION['user'])){
 //    header('Location: /MyForum/');
 //}
@@ -18,26 +17,30 @@ session_start();
 
 </head>
 
+<style>
+<?php include 'styles.css'?>
+</style>
+
 <body style="background-color: white !important">
- <?php include 'navbar.php' ?>
-<!--    <nav class=" container navbar navbar-expand-lg ">-->
-<!--        <div class="container-fluid">-->
-<!--            <a class="navbar-brand logo" href="/MyForum/">My Forum</a>-->
-<!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"-->
-<!--                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"-->
-<!--                aria-label="Toggle navigation">-->
-<!--                <span class="navbar-toggler-icon"></span>-->
-<!--            </button>-->
-<!--            <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-<!--                <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
-<!---->
-<!--                </ul>-->
-<!--                <form class="d-flex">-->
-<!--                    <a href="register" class="btn btn-outline-danger" type="submit">Sign up</a>-->
-<!--                </form>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </nav>-->
+    <?php include 'navbar.php' ?>
+    <!--    <nav class=" container navbar navbar-expand-lg ">-->
+    <!--        <div class="container-fluid">-->
+    <!--            <a class="navbar-brand logo" href="/MyForum/">My Forum</a>-->
+    <!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"-->
+    <!--                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"-->
+    <!--                aria-label="Toggle navigation">-->
+    <!--                <span class="navbar-toggler-icon"></span>-->
+    <!--            </button>-->
+    <!--            <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+    <!--                <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+    <!---->
+    <!--                </ul>-->
+    <!--                <form class="d-flex">-->
+    <!--                    <a href="register" class="btn btn-outline-danger" type="submit">Sign up</a>-->
+    <!--                </form>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </nav>-->
     <div class="container login-cont ">
 
         <form class="login  bg-light mx-auto align-middle ">
@@ -60,7 +63,7 @@ session_start();
         </form>
 
     </div>
-    <script src="app/Views/javascript/login.js" type="text/javascript"></script>
+    <script src="/app/Views/javascript/login.js" type="text/javascript"></script>
 </body>
 
 </html

@@ -2,10 +2,16 @@
 
 class Database
 {
+//
+//    private $host = "sql107.epizy.com";
+//    private $username = "epiz_32776612";
+//    private $password = "oVrMNTrSUpODf";
+//    private $database = "epiz_32776612_myforum";
     private $host = "localhost";
-    private $username = "root";
-    private $password = "root";
-    private $database = "myforum";
+
+     private $username = "root";
+     private $password = "root";
+     private $database = "id18824953_myforum";
     public  $conn;
 
     public function connect()
@@ -23,13 +29,11 @@ class Database
                 $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 return $this->conn;
             } catch (PDOException $e) {
-                echo "Connection failed: " . $e->getMessage();
+                return "Connection failed: " . $e->getMessage();
             }
         } catch (PDOException $e) {
             $sql = null;
-            echo $sql . "<br>" . $e->getMessage();
+            return $sql . "<br>" . $e->getMessage();
         }
     }
-
-
 }

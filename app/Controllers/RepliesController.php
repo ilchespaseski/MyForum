@@ -1,21 +1,16 @@
 <?php
 
-namespace App\Controllers;
+// namespace App\Controllers;
 use App\Models\replies;
 
 
 class RepliesController extends \QueryBuilder
 {
-    protected $query;
-
-    public function __construct(){
-        $this->query = new \QueryBuilder();
-    }
 
     public function addReplay(replies $replies){
         $topic_subject= $replies->getReplytopic();
         $sql = "SELECT topic_id from topics WHERE topic_subject = '$topic_subject'";
-        $topic_id = $this->query->find($sql);
+        $topic_id = $this->find($sql);
         $topic_id = $topic_id->fetch();
 
         $data = [
@@ -26,17 +21,17 @@ class RepliesController extends \QueryBuilder
 
         $sql = "INSERT INTO replies (reply_content,reply_topic,reply_by) VALUES (:reply_content, :reply_topic, :reply_by)";
 
-        return $this->query->insertData($sql,$data);
+        return $this->insertData($sql,$data);
 
     }
 
     public function getReplies($topic){
         $sql = "SELECT topic_id FROM topics WHERE topic_subject = '$topic'";
-        $id = $this->query->find($sql);
+        $id = $this->find($sql);
         $id = $id->fetch();
         $id =  $id['topic_id'] ;
         $sql = "SELECT * FROM replies WHERE reply_topic = '$id'";
-        $results = $this->query->find($sql);
+        $results = $this->find($sql);
         $i=0;
         $replies=[];
         while ($row = $results->fetch()){
@@ -46,7 +41,7 @@ class RepliesController extends \QueryBuilder
             $replies[$i]->reply_date = $row['reply_date'];
             $addby=$row['reply_by'];
             $sql = "SELECT username FROM users WHERE id ='$addby'";
-            $addby = $this->query->find($sql);
+            $addby = $this->find($sql);
             $addby = $addby->fetch();
             $replies[$i]->add_by = $addby['username'];
 
@@ -79,7 +74,7 @@ class RepliesController extends \QueryBuilder
             'user_id' => $user_id
         ];
         $sql = "DELETE FROM replies WHERE reply_id = :id AND reply_by = :user_id";
-        return $this->query->deleteData($sql,$data);
+        return $this->deleteData($sql,$data);
 
     }
 

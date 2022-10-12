@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Models;
-session_start();
 
 class Topics
 {

@@ -28,6 +28,7 @@ $(document).ready(function (){
                 },
                 cache: false,
                 success: function (data){
+                    // console.log(data);
                     location.reload();
                     },
                 error: function (xhr, status, error){
@@ -54,6 +55,7 @@ $(document).ready(function (){
         },
 
         success: function (data) {
+            //  console.log(data)
             data = jQuery.parseJSON(data);
             records = data;
             totalRecords = records.length;
@@ -61,7 +63,7 @@ $(document).ready(function (){
 
             apply_pagination()
 
-            console.log(data);
+            // console.log(data);
         }
     });
     function encryptMessage(publicKey) {
@@ -123,7 +125,8 @@ $(document).ready(function (){
                 },
 
                 success: function (data) {
-                    console.log(data);
+                    // console.log(data);
+                    location.reload();
                 },
                 error: function (xhr, status, error){
                     console.error(xhr);
