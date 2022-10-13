@@ -1,3 +1,3 @@
 # MyForum 
 
-myforum.infinityfreeapp.com
+[Click to view my project](myforum.infinityfreeapp.com)
