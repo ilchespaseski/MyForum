@@ -1,11 +1,9 @@
 // Get the input field
 $(document).ready(function () {
     $('#login-btn').hide();
+
     var input = document.getElementById("Password");
-    result = sessionStorage.getItem('loggedin');
-    if (result == true) {
-        location.href = "/";
-    }
+
     input.addEventListener("keypress", function (event) {
         // If the user presses the "Enter" key on the keyboard
         if (event.key === "Enter") {
@@ -14,26 +12,32 @@ $(document).ready(function () {
     });
 
     function Checking() {
+        //Getting values from inputs
         var username = $("#userName").val();
         var password = $("#Password").val();
+
+        //Checking is empty
         if (username == '' || password == '') {
-            console.log('popolni konju');
+            console.log('Please fill in');
         } else {
             $.ajax({
                 type: "POST",
-                url: "/MyForum/login",
+                url: "/sign-in",
                 data: {
+
                     username: username,
                     password: password,
 
                 },
-                cache: false,
                 success: function (data) {
-                    data = jQuery.parseJSON(data);
 
-                    if (data === false) {
+                    data = jQuery.parseJSON(data);
+                    if (data.logging === false) {
+
                         $("#usrpwinccorect").css('display', 'revert');
+
                     } else {
+
                         sessionStorage.setItem("username", data.username);
                         sessionStorage.setItem("loggedin", data.logging);
                         location.href = "/";
@@ -41,7 +45,7 @@ $(document).ready(function () {
                     }
                 },
                 error: function (xhr, status, error) {
-                    console.log(xhr);
+                    console.log(xhr + status + error);
                 }
             });
         }
@@ -54,3 +58,4 @@ $(document).ready(function () {
     })
 
 });
+

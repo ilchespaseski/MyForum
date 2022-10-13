@@ -20,8 +20,17 @@ class UsersController extends \QueryBuilder
     public function Login($username, $password)
     {
         $sql = "SELECT id, username, password FROM users WHERE username = '$username'";
+
         $row =  $this->find($sql);
+
         $result = $row->fetch();
+        if($result == false) {
+            $data = [
+                'logging' => false,
+                'incorrect' => 'username'
+            ];
+            return $data;
+        }
         if (password_verify($password, $result['password'])) {
 
             $_SESSION['id'] = $result['id'];
@@ -34,7 +43,11 @@ class UsersController extends \QueryBuilder
 
             return $data;
         } else {
-            return false;
+            $data = [
+                'logging' => false,
+                'incorrect' => 'password'
+            ];
+            return $data;
         }
     }
 

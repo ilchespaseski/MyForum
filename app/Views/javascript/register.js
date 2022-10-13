@@ -41,13 +41,14 @@ $(document).ready(() => {
         } else {
             $.ajax({
                 type: "POST",
-                url: "/MyForum/register",
+                url: "/registering",
                 data: {
                     "username": inputs['username'],
                     "password": inputs['password']
                 },
                 success: function (data) {
-                    window.location.replace("/MyForum/login");
+                    window.location.replace("/login");
+                    // console.log(data);
                 },
                 error: function (request, error) {
                     console.log("ERROR:" + error);

@@ -25,7 +25,7 @@
 
             <ul class="d-flex navbar-nav ">
                 <li class="nav-item">
-                    <a class="nav-link active " id='login-btn' aria-current="page" href="/MyForum/login">
+                    <a class="nav-link active " id='login-btn' aria-current="page" href="/login">
                         <i class="material-symbols-outlined">login</i>
                         <span class="login-text-btn">Login</span>
                     </a>
@@ -37,7 +37,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active " id='register-btn' aria-current="page" href="/MyForum/register">
+                    <a class="nav-link active " id='register-btn' aria-current="page" href="/register">
                         <i class="material-symbols-outlined">person_add</i>
                         <span class="register-text-btn">Register</span>
                     </a>

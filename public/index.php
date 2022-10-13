@@ -8,10 +8,12 @@ include_once $_SERVER["DOCUMENT_ROOT"] . '/config/autoload.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/app/Controllers/TopicsController.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/app/Models/Topics.php';
 include_once $_SERVER["DOCUMENT_ROOT"] . '/app/Models/replies.php';
+include_once $_SERVER["DOCUMENT_ROOT"] . '/app/Models/User.php';
 
 
 use App\Models\Topics;
 use App\Models\replies;
+use App\Models\User;
 
 include 'Routertest.php';
 //$router = new Router();
@@ -24,31 +26,30 @@ $repliescontroller = new RepliesController();
 get('/', function () use ($pageContr) {
     $pageContr->index();
 });
-get('/MyForum/topics/$cat-name', function ($catname) use ($pageContr) {
+get('/topic/$cat-name', function ($catname) use ($pageContr) {
     $pageContr->topics();
 });
 
 get('/myforum/replies/$topic-name', function ($topic_name) use ($pageContr) {
     $pageContr->replies();
 });
-get('/MyForum/login', function () use ($pageContr) {
+get('/login', function () use ($pageContr) {
     $pageContr->login();
 });
-get('/MyForum/register', function () use ($pageContr) {
+get('/register', function () use ($pageContr) {
     $pageContr->register();
 });
-post("/MyForum/getcategories", function () {
+post("/getcategories", function () {
     $categoriesContr = new CategoryController();
-
     $result = $categoriesContr->getCategories();
     echo json_encode($result);
 });
-post("/MyForum/register", function () use ($user) {
+post("/registering", function () use ($user) {
     $result = $user->CreateAccount(new User($_POST['username'], $_POST['password']));
     echo json_encode($result);
 });
 
-post("/MyForum/login", function () use ($user) {
+post("/sign-in", function () use ($user) {
     $result = $user->Login($_POST['username'], $_POST['password']);
     echo json_encode($result);
 });
@@ -93,58 +94,6 @@ post("/myforum/deletereplay", function () use ($repliescontroller) {
 });
 
 
-
-
 any('/404', function () {
     echo 'neabiva';
 });
-get('/myforum/login', $pageContr::login());
-
-// $router->get('/', PageController::index());
-//
-// $router->get('/login', PageController::login());
-//
-//
-//$router->get("/MyForum/login", function () use ($pageContr) {
-//    $pageContr->login();
-//});
-//
-//$router->get("/MyForum/register", function () use ($pageContr) {
-//    $pageContr->register();
-//});
-//
-//$router->get("/MyForum/posts", function () use ($pageContr) {
-//    $pageContr->posts();
-//});
-//$router->get("/MyForum/topics", function () use ($pageContr) {
-//
-//    $pageContr->topics();
-//});
-//
-//
-//$router->post("/MyForum/register", function () use ($user) {
-//    $result = $user->CreateAccount(new User($_POST['username'], $_POST['password']));
-//    echo json_encode($result);
-//});
-//
-//$router->post("/MyForum/login", function () use ($user) {
-//    $result = $user->Login($_POST['username'],$_POST['password']);
-//    echo json_encode($result);
-//
-//});
-//
-//$router->post("/MyForum/logout", function () use ($user) {
-//    $result = $user->Logout();
-//    echo json_encode($result);
-//});
-//$router->post("/MyForum/getcategories", function () use ($categoriesContr) {
-//  $result =$categoriesContr->getCategories();
-//  echo json_encode($result);
-//});
-//
-//
-//$router->addNotFoundHandler(function () use ($pageContr) {
-//    $pageContr->notFound();
-//});
-//
-//$router->run();

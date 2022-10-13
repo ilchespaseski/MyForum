@@ -4,14 +4,19 @@ $(document).ready(function (){
     // console.log(catid)
     // console.log(catname)
 
-
+    loggedin = sessionStorage.getItem('loggedin');
     url = window.location.href;
     var splitUrl = url.split('/');
     category = splitUrl[splitUrl.length-1];
     const category2 = category.charAt(0).toUpperCase() + category.slice(1);
-    $("#topic-add-cat-info").append("<span class=\"h5 col-6 col-lg-10 col-md-8\" id=\"cat-name\">"+category2+"</span>                " +
-        " <a class=\"btn btn-success col-2\" id=\"createnewtopic\" href=\"#ex1\" rel=\"modal:open\">New topic</a>\n\n ")
+    $("#topic-add-cat-info").append("<span class=\"h5 col-6 col-lg-10 col-md-8\" id=\"cat-name\">Category: "+category2+"</span>")
+    if(loggedin !== 'false') {
+        if(loggedin === null){
 
+        }else {
+            $("#topic-add-cat-info").append("<a class=\"btn btn-success col-2\" id=\"createnewtopic\" href=\"#ex1\" rel=\"modal:open\">New topic</a>\n\n ");
+        }
+        }
     $("#addtopic").click(function () {
             tpcname = $("#topic-name").val();
             firstreplay = $(".first-replay-textarea").val();
@@ -88,7 +93,7 @@ $(document).ready(function (){
                 '                </div>\n' +
                 '\n' +
                 '                <div class="topic_subject col-8 col-lg-10 ">\n' +
-                '                    <a href="/myforum/replies/'+btoa(displayRecords[i].topic_subject)+'">'+displayRecords[i].topic_subject+'</a>\n' +
+                '                    <a class="topic-subject-link" href="/myforum/replies/'+btoa(displayRecords[i].topic_subject)+'">'+displayRecords[i].topic_subject+'</a>\n' +
                 '                </div>\n')
             if(displayRecords[i].is_user){
                 encryptedID = btoa(displayRecords[i].topic_id);
@@ -136,72 +141,4 @@ $(document).ready(function (){
 
         })
 
-    // $('#container').on('click', '#tpcbtn', function(){
-    //     var topicname = $(this).val();
-    //     sessionStorage.setItem("topicname", topicname);
-    //     window.location.replace("posts.php");
-    //
-    // })
-    //
-    // $('#container').on('click', '#delete-btn', function(){
-    //     tpcid = $(this).val();
-    //     $.ajax({
-    //         type:"POST",
-    //         url:"../Database/Autoload.php",
-    //         data:{
-    //             tpcid:tpcid,
-    //             query:'DeleteTopics'
-    //         },
-    //         success: function (data){
-    //             location.reload();
-    //         },
-    //         error: function (xhr, status, error){
-    //             console.error(xhr);
-    //         }
-    //
-    //     });
-    // });
-    //
-    // $("#logout").click(function (){
-    //
-    //     $.ajax({
-    //         type:"POST",
-    //         url:"/MyForum/logout",
-    //         success: function (data){
-    //             console.log(data);
-    //             location.reload(true);
-    //             sessionStorage.setItem('loggedin',false);
-    //
-    //         },
-    //         error: function (xhr, status, error){
-    //             console.error(xhr);
-    //         }
-    //
-    //     });
-    // });
-    //
-    //
-    // $("#addtopic").click(function () {
-    //     tpcname = $("#topic-name").val();
-    //     if(tpcname===""){
-    //         $("#emptytpcname").css('display','revert');
-    //     }else {
-    //     $.ajax({
-    //         type:"POST",
-    //         url:"../Database/Autoload.php",
-    //         data: {
-    //             tpcname: tpcname,
-    //             query: 'CreateTopic'
-    //         },
-    //         cache: false,
-    //         success: function (data){
-    //             location.reload();
-    //         },
-    //         error: function (xhr, status, error){
-    //             console.error(xhr);
-    //         }
-    //
-    //     });
-    //     }
-    // });
     })

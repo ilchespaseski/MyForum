@@ -2,16 +2,16 @@
 
 class Database
 {
-//
-//    private $host = "sql107.epizy.com";
-//    private $username = "epiz_32776612";
-//    private $password = "oVrMNTrSUpODf";
-//    private $database = "epiz_32776612_myforum";
-    private $host = "localhost";
 
-     private $username = "root";
-     private $password = "root";
-     private $database = "id18824953_myforum";
+    private $host = "sql107.epizy.com";
+    private $username = "epiz_32776612";
+    private $password = "oVrMNTrSUpODf";
+    private $database = "epiz_32776612_myforum";
+//    private $host = "localhost";
+//
+//     private $username = "root";
+//     private $password = "root";
+//     private $database = "id18824953_myforum";
     public  $conn;
 
     public function connect()

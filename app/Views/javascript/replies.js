@@ -5,7 +5,21 @@ $(document).ready(function () {
     topic = splitUrl[splitUrl.length-1];
     topic = atob(topic);
 
+    loggedin = sessionStorage.getItem('loggedin');
+    $('.topic-info-replies').append('<h5>Topic: '+topic+'</h5>')
+    if(loggedin === 'false' || loggedin  === null) {
 
+            $('.first-replay').append('<textarea rows="5" cols="55" disabled="disabled" class="replay-area"\n' +
+                '                placeholder="Log in to post replay on this topic"></textarea>\n' +
+                '            <div class="usrpwwrong" id="isempty">*Please fill the topic name</div>\n' +
+                '            <button class="btn btn-success mx-auto align-middle" disabled id="addreply" ">Submit</a>')
+
+    } else {
+        $('.first-replay').append('<textarea rows="5" cols="55"  class="replay-area"\n' +
+            '                placeholder="Please enter your replay on this topic"></textarea>\n' +
+            '            <div class="usrpwwrong" id="isempty">*Please fill the topic name</div>\n' +
+            '            <button class="btn btn-success mx-auto align-middle"  id="addreply" ">Submit</a>')
+    }
 
     var $pagination = $('#pagination'),
         totalRecords = 0,
@@ -34,30 +48,52 @@ $(document).ready(function () {
         }
     });
 
+
     function generate_table() {
+        first = true;
+
         var tr;
         $('.replies-container').html('');
         for (var i = 0; i < displayRecords.length; i++) {
-            tr = $(' <div class="row topic-container">');
-            tr.append(' <div class="user-circle align-center col-1">\n' +
-                '                    <p>'+displayRecords[i].add_by.charAt(0)+'</p>\n' +
-                '                </div>\n' +
-                '\n' +
-                '                <div class="topic_subject col-8 col-lg-10 ">\n' +
-                '                    <p>'+displayRecords[i].reply_content+'</p>\n' +
-                '                </div>\n')
-            if(displayRecords[i].is_user){
-                encryptedID = btoa(displayRecords[i].reply_id);
-                test1= atob(displayRecords[i].reply_id);
-                tr.append('<button  class=" col-1 btn delete-replay" value="'+encryptedID+'"><i class="material-symbols-outlined">delete</i></button></div>')
+            if(first ==true){
+                tr = $(' <div class="row topic-container first-replay">');
+                tr.append(' <div class=" align-center col-1 user-circle-first">\n' +
+                    '                    <p>' + displayRecords[i].add_by.charAt(0) + '</p>\n' +
+                    '                </div>\n' +
+                    '\n' +
+                    '                <div class="topic_subject col-8 col-lg-10 ">\n' +
+                    '                    <p>' + displayRecords[i].reply_content + '</p>\n' +
+                    '                </div>\n')
+                if (displayRecords[i].is_user) {
+                    encryptedID = btoa(displayRecords[i].reply_id);
+                    test1 = atob(displayRecords[i].reply_id);
+                    tr.append('<button  class=" col-1 btn delete-replay" value="' + encryptedID + '"><i class="material-symbols-outlined">delete</i></button></div>')
+                }
+                $('.replies-container').append(tr);
+                first = false;
+            }else {
+                tr = $(' <div class="row topic-container">');
+                tr.append(' <div class="user-circle align-center col-1">\n' +
+                    '                    <p>' + displayRecords[i].add_by.charAt(0) + '</p>\n' +
+                    '                </div>\n' +
+                    '\n' +
+                    '                <div class="topic_subject col-8 col-lg-10 ">\n' +
+                    '                    <p>' + displayRecords[i].reply_content + '</p>\n' +
+                    '                </div>\n')
+                if (displayRecords[i].is_user) {
+                    encryptedID = btoa(displayRecords[i].reply_id);
+                    test1 = atob(displayRecords[i].reply_id);
+                    tr.append('<button  class=" col-1 btn delete-replay" value="' + encryptedID + '"><i class="material-symbols-outlined">delete</i></button></div>')
+                }
+                $('.replies-container').append(tr);
             }
-            $('.replies-container').append(tr);
 
 
         }
     }
 
     function apply_pagination() {
+        first = true;
 
         $pagination.twbsPagination({
             totalPages: totalPages,

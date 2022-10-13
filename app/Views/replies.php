@@ -56,7 +56,9 @@ error_reporting(0);
         </div>
     </nav>
 
+    <div class="topic-info-replies container">
 
+    </div>
     <div class="topic-section container">
 
         <div class="container replies-container">
@@ -71,10 +73,7 @@ error_reporting(0);
     <div class="mx-1">
 
         <div class="first-replay container">
-            <textarea rows="5" cols="55" class="replay-area"
-                placeholder="Please enter your replay on this topic"></textarea>
-            <div class="usrpwwrong" id="isempty">*Please fill the topic name</div>
-            <a class="btn btn-success mx-auto align-middle" id="addreply" ">Submit</a>
+
     </div>
 </div>
 <div id=" pager" class="d-flex justify-content-center">
