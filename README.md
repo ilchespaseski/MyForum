@@ -1,3 +1,3 @@
 # MyForum 
 
-[Click to open my project](http://myforum.infinityfreeapp.com)
+[Click to open my project](http://nextforum.ml/)
